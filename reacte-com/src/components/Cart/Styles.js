@@ -10,6 +10,7 @@ export const classes = {
   checkoutButton: `${PREFIX}-checkoutButton`,
   link: `${PREFIX}-link`,
   cardDetails: `${PREFIX}-cardDetails`,
+  content: `${PREFIX}-content`,
 };
 
 export const Root = styled("div")(({ theme }) => ({
@@ -41,5 +42,10 @@ export const Root = styled("div")(({ theme }) => ({
     marginTop: "10%",
     width: "100%",
     justifyContent: "space-between",
+  },
+  [`& .${classes.content}`]: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.default,
+    padding: theme.spacing(3),
   },
 }));

@@ -15,6 +15,7 @@ export const classes = {
   searchIcon : `${PREFIX}-searchIcon`,
   inputRoot: `${PREFIX}-inputRoot`,
   inputInput: `${PREFIX}-inputInput`,
+  link: `${PREFIX}-link`,
 }
 
 
@@ -35,7 +36,7 @@ export const Root = styled('div')(({ theme }) => ({
     textDecoration: "none",
  },
  [`& .${classes.image}`]: {
-    marginRight: "10px",
+    marginRight: "20px",
   },
   [`& .${classes.menuButton}`]: {
     marginRight: theme.spacing(2),
@@ -81,5 +82,9 @@ export const Root = styled('div')(({ theme }) => ({
     [theme.breakpoints.up("md")]: {
       width: "20ch",
     },
+  },
+  [`& .${classes.link}`]: {
+    textDecoration: "none",
+    color: "black",
   },
 }))

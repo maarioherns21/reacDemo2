@@ -1,6 +1,7 @@
 import {Typography, Container, Button, Grid } from "@mui/material"
 import { Root, classes } from "./Styles";
 import {Link} from "react-router-dom"
+import CartItem from "./CartItem/CartItem";
 
 
 export default function  Cart ({cart}) {
@@ -9,7 +10,7 @@ export default function  Cart ({cart}) {
     
     const renderEmptyCart = () => (
         <Typography variant="subtitle1">You have no items in your shopping cart,
-          <Link className={classes.link} to="/">start adding some</Link>!
+          <Link className={classes.link} to="/products">start adding some</Link>!
         </Typography>
       );
     
@@ -17,9 +18,9 @@ export default function  Cart ({cart}) {
       const renderCart = () => (
         <>
           <Grid container spacing={3}>
-            {cart.line_items.map((lineItem) => (
-              <Grid item xs={12} sm={4} key={lineItem.id}>
-               <h1>{lineItem.name}</h1>
+            {cart.line_items.map((item) => (
+              <Grid item xs={12} sm={4} key={item.id}>
+               <CartItem  item={item}/>
               </Grid>
             ))}
           </Grid>
@@ -33,14 +34,14 @@ export default function  Cart ({cart}) {
         </>
       );
     
-    
+      if (!cart.line_items) return 'Loading..';
     
         return (
           <Root>
             <Container>
-          <div className={classes.toolbar} />
+          <div className={classes.content} />
           <Typography className={classes.title} variant="h3" gutterBottom>Your Shopping Cart</Typography>
-          { !cart.line_items ? renderEmptyCart() : renderCart() }
+          { !cart.line_items.length ? renderEmptyCart() : renderCart() }
         </Container>
           </Root>
         );

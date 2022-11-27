@@ -8,7 +8,7 @@ const {cart} =useFetch()
 
 return (
         <div>
-         <Cart cart={cart} />
+         {/* <Cart cart={cart} /> */}
         </div>
     )
 }
