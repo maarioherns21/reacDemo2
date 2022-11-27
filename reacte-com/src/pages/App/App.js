@@ -9,15 +9,26 @@ import Cart from "../../components/Cart/Cart";
 
 
 export default function App () {   
- const {cart} =useFetch()   
+ const {cart, handleEmptyCart, handleRemoveFromCart , handleUpdateCartQty } =useFetch()   
     return (
       <BrowserRouter>
-        <div>  
-         <Navbar cart={cart} />
+        <div>
+          <Navbar cart={cart} />
           <Routes>
-           <Route path="/" exact  element={<Home />} />
-           <Route path="/products" exact element={<ProductsPage />} />
-           <Route exact path="/cart" element={<Cart cart={cart} />} />
+            <Route path="/" exact element={<Home />} />
+            <Route path="/products" exact element={<ProductsPage />} />
+            <Route
+              exact
+              path="/cart"
+              element={
+                <Cart
+                  cart={cart}
+                  handleEmptyCart={handleEmptyCart}
+                  handleRemoveFromCart={handleRemoveFromCart}
+                  handleUpdateCartQty={handleUpdateCartQty}
+                />
+              }
+            />
           </Routes>
         </div>
       </BrowserRouter>

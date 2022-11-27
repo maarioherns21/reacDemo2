@@ -2,7 +2,11 @@ import { Typography, Button, Card, CardActions, CardContent, CardMedia } from "@
 import { classes, Root } from "./style"
 
 
-const CartItem = ({item}) => {
+const CartItem = ({item, onUpdateCartQty, onRemoveCartQty }) => {
+
+  // console.log("==>" ,item)
+if(!item.quantity) return "Loading..."
+// if (!cart.line_items) return 'Loading..';
 
     return (
       <Root>
@@ -14,11 +18,11 @@ const CartItem = ({item}) => {
           </CardContent>
           <CardActions className={classes.cartActions}>
             <div className={classes.buttons} >
-             <Button type="button" size="small">-</Button>
+             <Button type="button" size="small" onClick={() => onUpdateCartQty(item.id, item.quantity -1)} >-</Button>
              <Typography>{item.quantity}</Typography>
-             <Button type="button" size="small">+</Button>
+             <Button type="button" size="small" onClick={() => onUpdateCartQty(item.id, item.quantity +1)}>+</Button>
             </div>
-            <Button variant="contained" type="button" color="secondary" size="small">remove</Button>
+            <Button variant="contained" type="button" color="secondary" size="small"  onClick={() => onRemoveCartQty(item.id)} >remove</Button>
           </CardActions>
         </Card>
       </Root>
