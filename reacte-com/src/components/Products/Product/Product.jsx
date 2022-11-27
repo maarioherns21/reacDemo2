@@ -17,12 +17,12 @@ return (
         <CardMedia className={classes.media} image={product.image.url} title={product.name} />
         <CardContent>
           <div className={classes.cardContent}>
-            <Link to={`/product/${product.id}`} >
-             <Typography gutterBottom variant="h5" component="h2">
+            <Link to={`/product/${product.id}`} className={classes.link} >
+             <Typography  gutterBottom variant="body1" component="h2">
               {product.name}
             </Typography>
             </Link>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography gutterBottom variant="body1" component="h2">
             {product.price.formatted_with_symbol}
             </Typography>
           </div>

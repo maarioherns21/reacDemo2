@@ -9,6 +9,7 @@ export const classes = {
   media: `${PREFIX}-media`,
   cardActions: `${PREFIX}-cardActions`,
   cardContent: `${PREFIX}-cardContent`,
+  link: `${PREFIX}-link`,
 }
 
 
@@ -28,5 +29,8 @@ export const Root = styled('div')(({ theme }) => ({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  [`& .${classes.link}`]: {
+   textDecoration: "none"
+},
 }))
 
