@@ -4,6 +4,7 @@ import ProductsPage from "../ProductsPage/ProductsPage";
 import Navbar from "../../components/NavBar/NavBar";
 import useFetch from "../../NewHooks/useFetch/useFetch";
 import Cart from "../../components/Cart/Cart";
+import Checkout from "../../components/CheckoutForm/Checkout/Checkout";
 
 
 
@@ -29,6 +30,7 @@ export default function App () {
                 />
               }
             />
+            <Route  exact path="/checkout" element={<Checkout cart={cart} />} />
           </Routes>
         </div>
       </BrowserRouter>
