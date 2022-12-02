@@ -24,7 +24,7 @@ const Checkout = ({ cart, onCaptureCheckout, order ,error  }) => {
 
           setCheckoutToken(token);
         } catch {
-          if (activeStep !== steps.length) navigate('/products');
+          if (activeStep !== steps.length) navigate("/");
         }
       };
 
@@ -42,7 +42,7 @@ const Checkout = ({ cart, onCaptureCheckout, order ,error  }) => {
         <Typography variant="subtitle2">Order ref: {order.customer_reference}</Typography>
       </div>
       <br />
-      <Button component={Link} variant="outlined" type="button" to="/products">Back to home</Button>
+      <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
     </>
   ) : (
     <div className={classes.spinner}>
@@ -55,7 +55,7 @@ const Checkout = ({ cart, onCaptureCheckout, order ,error  }) => {
       <>
         <Typography variant="h5">Error: {error}</Typography>
         <br />
-        <Button component={Link} variant="outlined" type="button" to="/products">Back to home</Button>
+        <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
       </>
     );
   }

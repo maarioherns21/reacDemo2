@@ -16,8 +16,8 @@ export default function App () {
         <div>
           <Navbar cart={cart} />
           <Routes>
-            <Route path="/" exact element={<Home />} />
-            <Route path="/products" exact element={<ProductsPage />} />
+            {/* <Route path="/" exact element={<Home />} /> */}
+            <Route path="/" exact element={<ProductsPage />} />
             <Route
               exact
               path="/cart"

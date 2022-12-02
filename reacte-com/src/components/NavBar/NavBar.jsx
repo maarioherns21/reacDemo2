@@ -17,9 +17,9 @@ const location  = useLocation();
            <Typography component={Link} to={"/"} variant="h6" className={classes.title} color="inherit">
           <img src={Logo} alt=" "  height="50px"  className={classes.image} />
           </Typography>
-          <Link className={classes.link} to={"/products"}>Product Page</Link>
+          <Link className={classes.link} to={"/"}>Product Page</Link>
           <div className={classes.grow} />
-          {location.pathname === "/products" && (
+          {location.pathname === "/" && (
         <div className={classes.button} >
         <IconButton component={Link} to="/cart" aria-label="Shoow carrtt items" color="inherit" >
           <Badge badgeContent={cart.total_items} color="secondary">
