@@ -31,4 +31,4 @@ if(!item.quantity) return "Loading..."
 
 export default CartItem
 
-////tomorrrow is addingg functionality to the  + and minus buttons  / today i fixed some stuff in regard to the cart  passing the data
+////tomorrrow is addingg functionality to the  + and minus buttons  / today i fixed some stuff in regard to the cart  passing the datas
