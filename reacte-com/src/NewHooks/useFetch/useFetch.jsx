@@ -6,7 +6,7 @@ export default function useFetch () {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState({});
     const [error, setError] = useState(null);
-
+    const [order, setOrder] =useState({})
     ///this  function Fetches the products into the main page
     const fetchProducts = async () => {
       try {
@@ -78,6 +78,26 @@ export default function useFetch () {
           console.log(error.message);
         }
       };
+
+      ////this refresh the  carrr and creates a new one 
+      const refreshCart = async () => {
+        const newCart = await commerce.cart.refresh();
+    
+        setCart(newCart);
+      };
+    
+      //this  allows you to procede in the check out process
+      const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
+        try {
+          const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder);
+    
+          setOrder(incomingOrder);
+    
+          refreshCart();
+        } catch (error) {
+          setError(error.data.error.message);
+        }
+      };
     
     useEffect(() => {
         fetchProducts()
@@ -86,6 +106,6 @@ export default function useFetch () {
 
 
     return {
-        products , cart , error,  handleAddToCart , handleEmptyCart,handleRemoveFromCart , handleUpdateCartQty
+        products , cart , error,  handleAddToCart , handleEmptyCart,handleRemoveFromCart , handleUpdateCartQty, handleCaptureCheckout, order
     }
 }

@@ -8,7 +8,7 @@ import { Root, classes } from "./style";
 import { commerce } from "../../../lib/commerce";
 const steps = ["Shipping address", "Payment details" , "Confirmation"];
 
-const Checkout = ({ cart }) => {
+const Checkout = ({ cart, onCaptureCheckout, order ,error  }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [shippingData, setShippingData] = useState([]);
@@ -44,7 +44,7 @@ const Checkout = ({ cart }) => {
     activeStep === 0 ? (
       <AddressForm checkoutToken={checkoutToken} next={next} />
     ) : (
-      <PaymentForm shippingData={shippingData} />
+      <PaymentForm nextStep={nextStep} onCaptureCheckout={onCaptureCheckout} backStep={backStep} checkoutToken={checkoutToken} shippingData={shippingData} />
     );
 
   return (

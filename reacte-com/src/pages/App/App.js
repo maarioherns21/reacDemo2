@@ -10,7 +10,7 @@ import Checkout from "../../components/CheckoutForm/Checkout/Checkout";
 
 
 export default function App () {   
- const {cart, handleEmptyCart, handleRemoveFromCart , handleUpdateCartQty } =useFetch()   
+ const {cart, handleEmptyCart, handleRemoveFromCart , handleUpdateCartQty,  handleCaptureCheckout, order ,error } =useFetch()   
     return (
       <BrowserRouter>
         <div>
@@ -30,7 +30,7 @@ export default function App () {
                 />
               }
             />
-            <Route  exact path="/checkout" element={<Checkout cart={cart} />} />
+            <Route  exact path="/checkout" element={<Checkout cart={cart} onCaptureCheckout={handleCaptureCheckout} order={order}  error={error} />} />
           </Routes>
         </div>
       </BrowserRouter>

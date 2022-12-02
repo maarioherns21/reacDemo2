@@ -1,7 +1,7 @@
 import { TextField, Grid, Input } from "@mui/material";
 import { useFormContext, Controller } from "react-hook-form";
 
-const FormInput = ({ name, label, required, render }) => {
+const FormInput = () => {
   const { register } = useFormContext(); // retrieve all hook methods
    
    
@@ -9,11 +9,12 @@ const FormInput = ({ name, label, required, render }) => {
     return (
       <>
         <Grid item xs={12} sm={6}>
-          <TextField label="First Name" {...register("firsName")} required fullWidth />
-          <TextField label="Last Name" {...register("LastName")}required fullWidth />
-          <TextField label="Adress" {...register("Adress1")} required fullWidth />
-          <TextField label="Zip Code" {...register("Zip")} required fullWidth />
-          <TextField label="City" {...register("city")} required fullWidth />
+          <TextField label="First Name"   name="firstName" {...register("firstName")} required fullWidth />
+          <TextField label="Last Name"    name="lastName" {...register("lastName")}required fullWidth />
+          <TextField name="street"   label="Street" {...register("street")} required fullWidth />
+          <TextField label="Zip Code"  name="zip" {...register("zip")} required fullWidth />
+          <TextField label="City"      name="city" {...register("city")} required fullWidth />
+          <TextField label="email"  name="email" {...register("email")} required fullWidth  />
         </Grid>
       </>
     );
