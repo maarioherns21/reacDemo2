@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { alpha } from "@mui/material/styles";
+// import { alpha } from "@mui/material/styles";
 
 const PREFIX = "Products";
 
@@ -17,6 +17,12 @@ export const Root = styled("div")(({ theme }) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
+    display: 'inline-block',
+    justifyContent: 'flex-end',
+    margin: '0 0 4px 4px',
+    letterSpacing: 'normal',
+    boxSizing: 'border-block',
+    verticalAlign: 'top',
   },
   [`& .${classes.toolbar}`]: {
     toolbar: theme.mixins.toolbar,

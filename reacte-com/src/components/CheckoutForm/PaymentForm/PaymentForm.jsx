@@ -45,7 +45,7 @@ const PaymentForm = ({checkoutToken, backStep, onCaptureCheckout, nextStep, ship
             },
           },
         };
-        console.log("worrking =>" ,orderData.payment.stripe)
+        // console.log("worrking =>" ,orderData.payment.stripe)
         onCaptureCheckout(checkoutToken.id, orderData);
 
         nextStep();

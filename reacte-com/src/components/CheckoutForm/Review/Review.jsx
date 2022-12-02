@@ -3,7 +3,7 @@ import { Typography, List, ListItem, ListItemText } from "@mui/material";
 
 const Review  = ({checkoutToken}) => {
 
-    console.log(checkoutToken.subtotal)
+    // console.log(checkoutToken.subtotal)
 
 
 

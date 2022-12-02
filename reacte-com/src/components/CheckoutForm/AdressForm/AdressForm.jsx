@@ -1,6 +1,6 @@
-import { InputLabel, Select, MenuItem, Button, Grid, Typography, Input, TextField, CssBaseline} from "@mui/material"
+import { InputLabel, Select, MenuItem, Button, Grid, Typography, CssBaseline} from "@mui/material"
 import { useState } from "react";
-import {useForm , FormProvider, useController, Controller} from "react-hook-form"
+import {useForm , FormProvider } from "react-hook-form"
 import FormInput from "../FormInput"
 import { Link } from "react-router-dom";
 // this imports the ecomemer store
@@ -21,7 +21,7 @@ const AddressForm = ({ checkoutToken, next}) => {
 const countries = Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name}))
 // console.log("this gives me an array from Objects => " , countries)
 const subdivisions  =  Object.entries(shippingSubdivisions).map(([code, name]) => ({ id: code, label: name}))
-console.log("this gives me an array from Objects ubdivison => " ,  subdivisions)
+// console.log("this gives me an array from Objects ubdivison => " ,  subdivisions)
 //this is for the shipping  options 
 const options  = shippingOptions.map((sO) => ({ id: sO.id, label: `${sO.description} - (${sO.price.formatted_with_symbol})` }))
 
@@ -34,7 +34,7 @@ const options  = shippingOptions.map((sO) => ({ id: sO.id, label: `${sO.descript
     const fetchShippingCountries = async (checkoutTokenId) => {
       const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId);
 
-      console.log("shipping info ==>", countries);
+      // console.log("shipping info ==>", countries);
       setShippingCountries(countries);
       ///gets you an array and gets you the first oone
     //   console.log(Object.keys(countries)[0])
@@ -109,7 +109,7 @@ const options  = shippingOptions.map((sO) => ({ id: sO.id, label: `${sO.descript
 
                 {/* this is for  iterating trhough Subdivisions */}
             <Grid item xs={12} sm={6}>
-                <InputLabel>shipping Subdivision</InputLabel>
+                <InputLabel>Shipping Subdivision</InputLabel>
                 <Select value={shippingSubdivision} fullWidth onChange={(e) => setShippingSubdivision(e.target.value)}>
                 {subdivisions.map((subdivision) => (
                     <MenuItem key={subdivision.id} value={subdivision.id}>
@@ -122,7 +122,7 @@ const options  = shippingOptions.map((sO) => ({ id: sO.id, label: `${sO.descript
 
                 {/* this is for  iterating trhough Shipping Options */}
             <Grid item xs={12} sm={6}>
-                <InputLabel>shipping options</InputLabel>
+                <InputLabel>Shipping Options</InputLabel>
                 <Select value={shippingOption} fullWidth onChange={(e) => setShippingOption(e.target.value)}>
                 {options.map((option) => (
                     <MenuItem key={option.id} value={option.id}>

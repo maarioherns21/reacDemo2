@@ -15,7 +15,7 @@ export default function  Cart ({cart,  handleEmptyCart, handleRemoveFromCart , h
       );
     
       if (!cart.line_items) return 'Loading..';
-       console.log(cart.line_items)
+      //  console.log(cart.line_items)
        
       const renderCart = () => (
         <>

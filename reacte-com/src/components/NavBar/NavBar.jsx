@@ -7,7 +7,7 @@ import Logo from "../../assets/logos.png"
 
 
 export const NavBar = ({cart}) => {
-console.log(cart)
+// console.log(cart)
 const location  = useLocation();
 
    return (

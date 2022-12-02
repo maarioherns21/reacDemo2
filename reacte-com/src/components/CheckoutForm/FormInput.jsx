@@ -1,5 +1,5 @@
-import { TextField, Grid, Input } from "@mui/material";
-import { useFormContext, Controller } from "react-hook-form";
+import { TextField, Grid } from "@mui/material";
+import { useFormContext  } from "react-hook-form";
 
 const FormInput = () => {
   const { register } = useFormContext(); // retrieve all hook methods

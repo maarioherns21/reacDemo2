@@ -1,10 +1,9 @@
 
 import { Grid } from "@mui/material"
 import { classes , Root} from './Styles';
-import shoe from "../../assets/shoe.jpg"
-import mac from "../../assets/macbook.png"
+// import shoe from "../../assets/shoe.jpg"
+// import mac from "../../assets/macbook.png"
 import Product from "./Product/Product";
-import useFetch from "../../NewHooks/useFetch/useFetch";
 
 
 

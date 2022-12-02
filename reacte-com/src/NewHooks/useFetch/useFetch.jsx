@@ -23,7 +23,7 @@ export default function useFetch () {
       try {
         const cart = await commerce.cart.retrieve();
 
-        console.log("FetchCart", cart);
+        // console.log("FetchCart", cart);
         setCart(cart);
       } catch (error) {
         setError(error.message);
@@ -35,7 +35,7 @@ export default function useFetch () {
       try {
         const response = await commerce.cart.add(productId, quantity);
 
-        console.log("ClickingAddingToCart", cart);
+        // console.log("ClickingAddingToCart", cart);
         setCart(response);
       } catch (error) {
         setError(error.message);
@@ -47,7 +47,7 @@ export default function useFetch () {
       const handleUpdateCartQty = async (productId, quantity) => {
         try {
           const response = await commerce.cart.update(productId, { quantity });
-          console.log("this add and deletes products => ", response);
+          // console.log("this add and deletes products => ", response);
           setCart(response);
         } catch (error) {
           setError(error.message);
@@ -59,7 +59,7 @@ export default function useFetch () {
       const handleRemoveFromCart = async (productId) => {
         try {
           const response = await commerce.cart.remove(productId);
-          console.log("this deletes the full product => ", response);
+          // console.log("this deletes the full product => ", response);
           setCart(response);
         } catch (error) {
           setError(error.message);
@@ -71,7 +71,7 @@ export default function useFetch () {
       const handleEmptyCart = async () => {
         try {
           const response = await commerce.cart.empty();
-          console.log("this empties the cart", response);
+          // console.log("this empties the cart", response);
           setCart(response);
         } catch (error) {
           setError(error.message);
