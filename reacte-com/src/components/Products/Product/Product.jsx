@@ -30,7 +30,7 @@ return (
         </CardContent>
         <CardActions disableSpacing className={classes.cardActions}>
           <IconButton aria-label="Add to Cart" onClick={() => onAddToCart(product.id, 1)}>
-            <AddShoppingCart />
+            <AddShoppingCart color="primary"  />
           </IconButton>
         </CardActions>
       </Card>

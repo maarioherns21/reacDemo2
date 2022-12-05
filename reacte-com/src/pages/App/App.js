@@ -5,12 +5,13 @@ import Navbar from "../../components/NavBar/NavBar";
 import useFetch from "../../NewHooks/useFetch/useFetch";
 import Cart from "../../components/Cart/Cart";
 import Checkout from "../../components/CheckoutForm/Checkout/Checkout";
+import ProductDetails from "../../components/Products/ProductDetails/ProductDetails"
 
 
 
 
 export default function App () {   
- const {cart, handleEmptyCart, handleRemoveFromCart , handleUpdateCartQty,  handleCaptureCheckout, order ,error } =useFetch()   
+ const {cart, handleEmptyCart, handleRemoveFromCart , handleUpdateCartQty,  handleCaptureCheckout, order ,error , handleAddToCart, products } =useFetch()   
     return (
       <BrowserRouter>
         <div>
@@ -30,6 +31,7 @@ export default function App () {
                 />
               }
             />
+            <Route exact path="/product/:id" element={<ProductDetails onAddToCart={handleAddToCart} products={products} />} />
             <Route  exact path="/checkout" element={<Checkout cart={cart} onCaptureCheckout={handleCaptureCheckout} order={order}  error={error} />} />
           </Routes>
         </div>

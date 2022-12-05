@@ -19,14 +19,15 @@ const location  = useLocation();
           </Typography>
           <Link className={classes.link} to={"/"}>Product Page</Link>
           <div className={classes.grow} />
-          {location.pathname === "/" && (
+          {/* {location.pathname === "/"  && ( */}
         <div className={classes.button} >
         <IconButton component={Link} to="/cart" aria-label="Shoow carrtt items" color="inherit" >
-          <Badge badgeContent={cart.total_items} color="secondary">
+          <Badge badgeContent={cart.total_items} color="primary">
             <ShoppingCart />
           </Badge>
         </IconButton>
-        </div> )}
+        </div> 
+        {/* )} */}
         </Toolbar>
       </AppBar>
    </Root>

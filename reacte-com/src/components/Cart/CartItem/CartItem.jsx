@@ -22,7 +22,7 @@ if(!item.quantity) return "Loading..."
              <Typography>{item.quantity}</Typography>
              <Button type="button" size="small" onClick={() => onUpdateCartQty(item.id, item.quantity +1)}>+</Button>
             </div>
-            <Button variant="contained" type="button" color="secondary" size="small"  onClick={() => onRemoveCartQty(item.id)} >remove</Button>
+            <Button variant="contained" type="button" color="inherit" size="small"  onClick={() => onRemoveCartQty(item.id)} >remove</Button>
           </CardActions>
         </Card>
       </Root>
